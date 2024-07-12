@@ -22,18 +22,10 @@ Step 2: Prepare a csv file with the name or id of the parent compound in the fir
 ```
 python prepare_input_file.py -input_file input.csv -output_file processed_data.txt
 ```
-###  Translate
+###  Translate and Get predictions
 
-Step 3: Edit the bash file predict: define the source file (processed_data.txt ) and the beam size. The default beam size is 5 and the user can change it to get fewer or more predictions per molecule.  The user can also define the min and max length of the predicted SMILES sequences. Then, translate the input molecules into metabolites:
+Step 3: Use the bash file to transalte and get predictions: you can choose different bash file according to the number of predicted metabolite needed. Each bash file has three parameters. You need to define the source file (processed_data.txt , same as the output file in step 2) for the first parameter. For the second parameter, You need to define the file path where the predictions will be saved. In the prediction files, you can get three files, two txt files store the predicted SoM and metabolite information, one csv stores parent compound names, SMILES and predicted metabolites. For the third parameter, you need to define the input file (same as the input file in step 2). If you want to visualise predicted metabolites, you can add the visualise_predictions in the last line of bash file. The user can also define the min and max length of the predicted SMILES sequences, number of predicted SoMs and number of predicted metabolites ( n_best ).
 ```
-./translate.sh
+./predict-top1.sh  src_file prediction_file_path input_file
+./predict-top1.sh  processed_data.txt ./prediction input.csv
 ```
-### Get predictions
-
-Step 4: Processing of prediction results and obtaining predictions:
-```
-python process_predictions.py -input_file input.csv -output_file predicted_metabolites.csv -beam_size ${beam} -visualise_predictions ${bool}
-```
-`input_file`  the name of the input csv file (same as the input file in step 2)  `output_file`  (optional) the name of the output csv file where the predictions will be saved. Default: predicted_metabolites.csv  `beam_size`  (optional) the beam size which has to be the same as the beam size used in step 3. Default: 5  `visualise_predictions`  (optional) if True then the predicted metabolites will be visualised using RDKit. Default: False.
-
-This will generate a csv file with the predicted metabolites.
