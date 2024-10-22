@@ -7,9 +7,10 @@ Create a conda environment:
 ```
 conda create -n metapredictor python=3.8
 source activate metapredictor
-conda install rdkit -c rdkit
+conda install rdkit 
 conda install pytorch=1.13.0
-pip install -e .
+pip install OpenNMT-py==2.3.0
+pip install pandas
 ```
 
 ## Predicting drug metabolites
