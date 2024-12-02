@@ -1,5 +1,5 @@
 # MetaPredictor
-MetaPredictor is a  end-to-end , prompt-based and transformer-base tool to predict human metabolites for small molecules. The methodology is described in detain in the paper _MetaPredictor: _in silico_ prediction of drug metabolites based on deep language models with prompt engineering_. The implementation of the Transformer model is based on the [OpenNMT toolkit](http://opennmt.net/OpenNMT-py/). The reaction data is processed based on the [RDKit](https://www.rdkit.org/) software.
+MetaPredictor is a  end-to-end , prompt-based and transformer-base tool to predict human metabolites for small molecules. The methodology is described in detain in the paper _MetaPredictor: _in silico_ prediction of drug metabolites based on deep language models with prompt engineering_. The implementation of the Transformer model is based on the [OpenNMT toolkit](http://opennmt.net/OpenNMT-py/). The reaction data is processed based on the [RDKit](https://www.rdkit.org/) software. The similarity calculations is based on RDKFingerprint.
 
 
 ## Installation
