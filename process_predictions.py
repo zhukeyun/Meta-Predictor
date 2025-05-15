@@ -31,7 +31,7 @@ def main(opt):
         if not os.path.exists(figures_directory):
             os.makedirs(figures_directory)
 
-    for i in range(0, len(drug_lines) - 1):
+    for i in range(0, len(drug_lines)):
         Name, smiles = drug_lines[i].split(',')
         if not check_smile(smiles):
             continue
